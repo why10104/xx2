@@ -1,0 +1,43 @@
+@import "com1";
+ body{
+   background:#0c6078;
+ }
+.header{
+  width: 100%;
+  height:48px;
+  border:1px solid #012630;
+  h3{
+    font-size:28px;
+    color:#fffefe;
+    letter-spacing:3px;
+    line-height:48px;
+    text-align: center;
+    height:48px;
+  }
+}
+.content{
+ width:100%;
+  padding:36px 3% 0px;
+  //box-sizing: border-box;
+  .left{
+    float:left;
+    width:22%;
+    margin-right:2%;
+    height:500px;
+    background:red;
+    border:1px solid #068da6;
+    .top{
+      
+    }
+    .top{
+     border-top:1px solid #068da6;
+    }
+    
+  }
+  .right{
+    float:left;
+    width:70%;
+    height:500px;
+    background:green;
+  }
+}
