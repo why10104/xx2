@@ -19,36 +19,158 @@ img {
   border: 0; }
 
 body {
-  background: #0c6078; }
+  background: #0c6078;
+  height: 100%; }
+  body:after {
+    content: "";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both; }
 
 .header {
   width: 100%;
   height: 48px;
-  border: 1px solid #012630; }
+  border-bottom: 1px solid #012630;
+  box-sizing: border-box; }
   .header h3 {
     font-size: 28px;
     color: #fffefe;
     letter-spacing: 3px;
-    line-height: 48px;
     text-align: center;
+    line-height: 48px;
     height: 48px; }
 
 .content {
-  width: 100%;
-  padding: 36px 3% 0px; }
-  .content .left {
-    float: left;
-    width: 22%;
-    margin-right: 2%;
-    height: 500px;
-    background: red;
-    border: 1px solid #068da6; }
-    .content .left .top {
-      border-top: 1px solid #068da6; }
-  .content .right {
-    float: left;
-    width: 70%;
-    height: 500px;
-    background: green; }
+  width: 100%; }
+  .content .cont {
+    margin: 2.5% auto 5%;
+    width: 94%;
+    height: 92.5%;
+    overflow: hidden; }
+    .content .cont .left {
+      float: left;
+      width: 24%;
+      margin-right: 1%;
+      border: 1px solid #068da6; }
+      .content .cont .left .top {
+        width: 100%;
+        padding-bottom: 15px;
+        overflow: hidden; }
+        .content .cont .left .top form {
+          width: 93%;
+          margin: 20px auto; }
+          .content .cont .left .top form .int1 {
+            width: 78.5%;
+            color: #b7c3d1;
+            line-height: 27px;
+            text-indent: 16px;
+            height: 27px;
+            border: 1px solid #02a1cb;
+            background: #073f4c;
+            border-right: 0;
+            border-radius: 13px 0 0 13px;
+            outline: none; }
+          .content .cont .left .top form .int2 {
+            margin-left: -5px;
+            width: 21%;
+            height: 29px;
+            color: #f9ffff;
+            text-align: center;
+            line-height: 29px;
+            border: 1px solid #02a1cb;
+            background: #04353a;
+            border-radius: 0 13px 13px 0;
+            vertical-align: bottom;
+            outline: none;
+            border-left: 0; }
+        .content .cont .left .top .con1 {
+          overflow: hidden;
+          width: 100%; }
+          .content .cont .left .top .con1 a {
+            float: left;
+            width: 30%; }
+            .content .cont .left .top .con1 a img {
+              float: left;
+              width: 80%;
+              margin: 4px 10%; }
+          .content .cont .left .top .con1 .infm {
+            float: left;
+            width: 65%;
+            border: 1px solid #0b7e93;
+            padding: 2px 0 0px 7px; }
+            .content .cont .left .top .con1 .infm p span {
+              display: inline-block;
+              height: 22px;
+              color: #dbdfeb;
+              font-size: 10px;
+              line-height: 22px;
+              letter-spacing: 0; }
+            .content .cont .left .top .con1 .infm p .st1 {
+              width: 53%;
+              height: 22px;
+              overflow: hidden; }
+            .content .cont .left .top .con1 .infm p .st2 {
+              overflow: hidden;
+              width: 45%;
+              height: 22px; }
+        .content .cont .left .top .form2 {
+          width: 100%; }
+          .content .cont .left .top .form2 .con2 {
+            width: 100%; }
+            .content .cont .left .top .form2 .con2 span {
+              float: left;
+              width: 50%;
+              color: #e0e8f5;
+              font-size: 10px;
+              line-height: 40px;
+              text-indent: 10px; }
+              .content .cont .left .top .form2 .con2 span select {
+                margin-left: 10px;
+                width: 80px;
+                height: 20px;
+                line-height: 20px;
+                background: #074a64;
+                vertical-align: middle;
+                border: 1px solid #156d83;
+                color: #e0e8f5;
+                font-size: 10px; }
+          .content .cont .left .top .form2 .sec {
+            display: block;
+            width: 33%;
+            height: 28px;
+            text-align: center;
+            border: 1px solid #08718e;
+            margin: 0 auto;
+            border-radius: 14px;
+            line-height: 28px;
+            outline: none;
+            cursor: pointer; }
+      .content .cont .left .bot {
+        border-top: 1px solid #068da6; }
+        .content .cont .left .bot h5 {
+          height: 22px;
+          margin-top: 5px;
+          line-height: 22px;
+          font-size: 12px;
+          color: #e7e9f5;
+          text-align: center; }
+        .content .cont .left .bot table {
+          width: 93%;
+          margin: 0 auto 10px; }
+          .content .cont .left .bot table td {
+            color: #f2ffff;
+            font-size: 12px;
+            text-align: center; }
+    .content .cont .right {
+      float: left;
+      width: 74%;
+      height: 500px;
+      background: green; }
+      .content .cont .right .boxx1 {
+        float: left;
+        box-sizing: border-box;
+        height: 280px; }
 
 /*# sourceMappingURL=index.css.map */
