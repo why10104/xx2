@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery.1.8.3.js"></script>
     <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js"></script>
 </head>
 <body>
     <div class="header">
@@ -84,42 +85,79 @@
                 </div>
             </div>
             <div class="right">
-                <div id="container" class="boxx1 ri1">
+                <div id="container1" class="boxx1 ri1">
                 </div>
-                <div class="boxx1 ri2"></div>
-                <div class="boxx1 ri3"></div>
-                <div class="boxx1 ri4"></div>
+                <div id="container2" class="boxx1 ri2">
+                    
+                </div>
+                <div id="container3" class="boxx1 ri3">
+                    <h3>大学课外学习活动占比</h3>
+                    <div class="box-c">
+                        <div id="container31" class="box21"></div>
+                        <div id="container32" class="box21"></div>
+                        <div id="container33" class="box21"></div>
+                        <div id="container34" class="box21"></div>
+                    </div>
+                    <div class="box3">
+                        <div class="box33">
+                            <h4>第一学年</h4>
+                            <p class="box331">参见课外活动 <span>30</span>次</p>
+                        </div>
+                        <div class="box33">
+                            <h4>第二学年</h4>
+                            <p class="box331">参见课外活动 <span>30</span>次</p>
+                        </div>
+                        <div class="box33">
+                            <h4>第三学年</h4>
+                            <p class="box331">参见课外活动 <span>30</span>次</p>
+                        </div>
+                        <div class="box33">
+                            <h4>第四学年</h4>
+                            <p class="box331">参见课外活动 <span>30</span>次</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container4" class="boxx1 ri4"></div>
             </div>
         </div>
     </div>
 </body>
 </html>
 <script>
-    $("#container").highcharts({
+    $("#container1").highcharts({
         chart: {
             type: 'spline',
-            spacing: [1, 5, 10, 20],
-            // 指定外边距
-            margin:[60,30,30,45],
+            spacingTop:15,
+            // // 指定外边距
+            margin:[60,20,30,50],
         },
         yAxis: {
             tickPositions:[0,200,400,600,800,1000,1200],
-            gridLineWidth: 100,
             lineWidth: 1,
             lineColor: '#728486',
-            alternateGridColor: '#FDFFD5'
-        },
-        xAxis: {
-
-            lineWidth: 1,
-            lineColor: '#728486',
-            title:{
-                text:'学期',
-                x:265 ,
-                y:-23
+            alternateGridColor: '#FDFFD5',
+            tickLength:-10,
+            tickColor: '#728486',
+            title: {
+                text: '',
             }
         },
-
+        xAxis: {
+            categories: [1,2,3,4,5,6,7,8],
+            tickAmount: 8,
+            lineWidth: 1,
+            lineColor: '#728486',
+            tickLength: 0,
+            labels:{
+                padding: 1
+            },
+            title: {
+                text: '学期',
+                align: 'high',
+                y:-20,
+                x:5
+            }
+        },
         credits: {
             enabled: false
         },
@@ -127,38 +165,465 @@
             text: '大学学习总成绩变化分析' ,
             align: 'left'
         },
+
+
         legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top'
+            floating: 'true',
+            align: 'right', //水平方向位置
+            verticalAlign: 'top', //垂直方向位置
+            width:100,
+            height:60,
+            x: 30, //距离x轴的距离
+            y: -10 //距离Y轴的距离
         },
-        
         series: [{
             name: '第一学年',
-            data: [280, 350, 350, 390, 230, 200, 410,500, 600]
+            data: [280, 350, 350, 390, 230, 200, 410,500]
         }, {
             name: '第二学年',
-            data: [330, 380, 380, 420, 600, 680, 900,900, 1080]
+            data: [330, 380, 380, 420, 600, 680, 900,900]
         }, {
             name: '第二学年',
-            data: [500, 690, 580, 430, 590, 500, 610,600, 680]
+            data: [500, 690, 580, 430, 590, 500, 610,600]
         }, {
             name: '第三学年',
-            data: [600, 700, 730, 760, 790, 900, 1080,790, 900]
+            data: [600, 700, 730, 760, 790, 900, 1080,790]
         }],
-        // responsive: {
-        //     rules: [{
-        //         condition: {
-        //             maxWidth: 500
-        //         },
-        //         chartOptions: {
-        //             legend: {
-        //                 layout: 'horizontal',
-        //                 align: 'center',
-        //                 verticalAlign: 'bottom'
-        //             }
-        //         }
-        //     }]
-        // }
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 460,
+                    minWidth:200,
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
     });
+    $('#container2').highcharts({
+        chart: {
+            type: 'column' ,
+            spacingTop:15,
+            // // 指定外边距
+            margin:[60,20,30,50],
+            plotBackgroundColor:'rgba(0,0,0,0.2)',
+        },
+        title: {
+            text: '大学专业课成绩统计分析',
+            align: 'left'
+        },
+        credits: {
+            enabled: false
+        },
+        legend: {
+            enabled: false
+        },
+        yAxis: {
+            lineWidth: 1,
+            lineColor: '#728486',
+            title: {
+                text: '',
+            }
+        },
+        xAxis: {
+            categories: ['古代历史','考古学','现代史','世界史','发展史','古迹研究','科学规划'],
+            lineWidth: 1,
+            lineColor: '#728486',
+            tickLength: 0,
+            labels:{
+                padding: 1
+            },
+
+        },
+
+        plotOptions: {
+            series: {
+                allowPointSelect: true,
+            }
+        },
+        series: [{
+            data: [
+                {color:'#3f99e5',y:29.9},
+                {color:'#9b3eca',y:71.5},
+                {color:'#ea69a2',y:106.4},
+                {color:'#32b16c',y:129.9},
+                {color:'#f39b77',y:144.0},
+                {color:'#eb6100',y:176.0},
+                {color:'#98e024',y:89.5}
+            ],
+            // color:[,,,,,']
+            // 71.5, 106.4, 129.2, 144.0, 176.0,89.5
+        }],
+
+
+    });
+    // the button action
+    $('#button').click(function () {
+        var selectedPoints = chart.getSelectedPoints();
+        if (chart.lbl) {
+            chart.lbl.destroy();
+        }
+        chart.lbl = chart.renderer.label('You selected ' + selectedPoints.length + ' points', 100, 60)
+            .attr({
+                padding: 10,
+                r: 5,
+                fill: Highcharts.getOptions().colors[1],
+                zIndex: 5
+            })
+            .css({
+                color: 'white'
+            })
+            .add();
+
+    });
+
+    //1
+    var myChart1 = echarts.init(document.getElementById('container31'));
+    option = {
+        title: {
+            text: '70%',
+            x: 'center',
+            y: 'center',
+            backgroundColor:"#fd7ecf",
+            borderRadius:50,
+            textStyle: {
+                fontWeight: 'normal',
+                color: '#fff',
+                fontSize: '15',
+            },
+            padding:[13,5],
+            legend:{
+                show:false,
+            }
+        },
+        color: ['rgba(176, 212, 251, 1)'],
+        legend: {
+            show: false,
+            itemGap: 12,
+            data: ['01', '02']
+        },
+        series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['50%', '75%'],
+            startAngle:60,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            },
+            hoverAnimation: true,
+            data: [{
+                value: 63,
+                name: '01',
+                itemStyle: {
+                    normal: {
+                        color: "#fc7ed0",
+                        // label: {
+                        //     show: true
+                        // },
+                        labelLine: {
+                            show: true,
+                        }
+                    }
+                }
+            }, {
+                name: '02',
+                value: 37 ,
+                itemStyle: {
+                    normal: {
+                        color: "#312f30",
+                    }
+                }
+            }]
+        }]
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option);
+
+    // //2
+    var myChart2 = echarts.init(document.getElementById('container32'));
+    option = {
+        title: {
+            text: '70%',
+            x: 'center',
+            y: 'center',
+            backgroundColor:"#fd7ecf",
+            borderRadius:50,
+            textStyle: {
+                fontWeight: 'normal',
+                color: '#fff',
+                fontSize: '15',
+            },
+            padding:[13,5],
+            legend:{
+                show:false,
+            }
+        },
+        color: ['rgba(176, 212, 251, 1)'],
+        legend: {
+            show: false,
+            itemGap: 12,
+            data: ['01', '02']
+        },
+
+        series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['50%', '75%'],
+            startAngle:60,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                  }
+                }
+            },
+            hoverAnimation: true,
+            data: [{
+                value: 63,
+                name: '01',
+                itemStyle: {
+                    normal: {
+                        color: "#fc7ed0",
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                }
+            }, {
+                name: '02',
+                value: 37 ,
+                itemStyle: {
+                    normal: {
+                        color: "#312f30",
+                    }
+                }
+            }]
+        }]
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option);
+
+    //3
+    var myChart3 = echarts.init(document.getElementById('container33'));
+    option = {
+        title: {
+            text: '70%',
+            x: 'center',
+            y: 'center',
+            backgroundColor:"#fd7ecf",
+            borderRadius:50,
+            textStyle: {
+                fontWeight: 'normal',
+                color: '#fff',
+                fontSize: '15',
+            },
+            padding:[13,5],
+            legend:{
+                show:false,
+            }
+        },
+        color: ['rgba(176, 212, 251, 1)'],
+        legend: {
+            show: false,
+            itemGap: 12,
+            data: ['01', '02']
+        },
+
+        series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['50%', '75%'],
+            startAngle:60,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            },
+            hoverAnimation: true,
+            data: [{
+                value: 63,
+                name: '01',
+                itemStyle: {
+                    normal: {
+                        color: "#fc7ed0",
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                }
+            }, {
+                name: '02',
+                value: 37 ,
+                itemStyle: {
+                    normal: {
+                        color: "#312f30",
+                    }
+                }
+            }]
+        }]
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart3.setOption(option);
+
+    //4
+    var myChart4 = echarts.init(document.getElementById('container34'));
+    option = {
+        title: {
+            text: '70%',
+            x: 'center',
+            y: 'center',
+            backgroundColor:"#fd7ecf",
+            borderRadius:50,
+            textStyle: {
+                fontWeight: 'normal',
+                color: '#fff',
+                fontSize: '15',
+            },
+            padding:[13,5],
+            legend:{
+                show:false,
+            }
+        },
+        color: ['rgba(176, 212, 251, 1)'],
+        legend: {
+            show: false,
+            itemGap: 12,
+            data: ['01', '02']
+        },
+
+        series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['50%', '75%'],
+            startAngle:60,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            },
+            hoverAnimation: true,
+            data: [{
+                value: 63,
+                name: '01',
+                itemStyle: {
+                    normal: {
+                        color: "#fc7ed0",
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                }
+            }, {
+                name: '02',
+                value: 37 ,
+                itemStyle: {
+                    normal: {
+                        color: "#312f30",
+                    }
+                }
+            }]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart4.setOption(option);
+
+    var myChart5 = echarts.init(document.getElementById('container4'));
+    const colors = ['#5793f3', '#5793f3', '#d14a61', '#d14a61', '#675bba', '#339a2b', '#F96D00', '#971549'];
+    option = {
+        color: colors,
+        title: {
+            top:'3%',
+            text: '大学非专业课占比例',
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            bottom:'2%',
+            left:"10%",
+        },
+        grid: {
+            left: '3%',
+            right: '10%',
+            bottom: '10%',
+            containLabel: true
+        },
+        xAxis: {
+            boundaryGap: false,
+            name:"学期",
+            data: ['1','2', '3', '4', '5', '6', '7', '8'],
+        },
+        yAxis: [{
+            // type:'value',
+            data: ['25%', '50%', '75%', '100%'],
+            // data: ['10', '20', '30', '40'],
+        }],
+
+        series: [{
+            "name": "计算机科学",
+            "type": "line",
+            "data": ["10%", "10%", "25%","50%", "50%", "50%","75%","75%"],
+            
+        }
+            // , {
+        //     "name": "军事体育",
+        //     "type": "line",
+        //     "data": [8, 10, 50,26, 30, 57,20, 10, 55, 88],
+        // }, {
+        //     "name": "科学观察",
+        //     "type": "line",
+        //     "data": [8, 10, 50,26, 30, 57,20, 10, 55, 88],
+        // }, {
+        //     "name": "当代美术欣赏",
+        //     "type": "line",
+        //     "data": [8, 10, 50,26, 30, 57,20, 10, 55, 88],
+        // }
+        ]
+    };
+    myChart5.setOption(option);
+    
 </script>

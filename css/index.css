@@ -165,12 +165,51 @@ body {
             text-align: center; }
     .content .cont .right {
       float: left;
-      width: 74%;
-      height: 500px;
-      background: green; }
+      width: 74%; }
       .content .cont .right .boxx1 {
         float: left;
-        box-sizing: border-box;
-        height: 280px; }
+        width: 50%;
+        height: 328px;
+        box-sizing: border-box; }
+        .content .cont .right .boxx1:nth-child(n+3) {
+          margin-top: 10px; }
+        .content .cont .right .boxx1 h3 {
+          font-size: 21px;
+          line-height: 64px;
+          color: #fff;
+          text-indent: 23px; }
+        .content .cont .right .boxx1 .box-c {
+          width: 100%;
+          height: 135px; }
+          .content .cont .right .boxx1 .box-c .box21 {
+            float: left;
+            width: 25%;
+            height: 135px; }
+        .content .cont .right .boxx1 .box3 {
+          width: 100%;
+          height: 40%; }
+          .content .cont .right .boxx1 .box3 .box33 {
+            float: left;
+            width: 25%;
+            height: 135px; }
+            .content .cont .right .boxx1 .box3 .box33 h4 {
+              text-align: center;
+              font-size: 18px;
+              color: #f2ffff;
+              line-height: 33px;
+              margin-bottom: 10px; }
+            .content .cont .right .boxx1 .box3 .box33 .box331 {
+              text-align: center;
+              width: 95%;
+              display: block;
+              margin: 0 auto;
+              color: #faeaf4;
+              background: #ff7fd4;
+              height: 24px;
+              line-height: 24px;
+              border-radius: 12px;
+              font-size: 10px; }
+              .content .cont .right .boxx1 .box3 .box33 .box331 span {
+                display: inline-block; }
 
 /*# sourceMappingURL=index.css.map */

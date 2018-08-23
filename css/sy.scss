@@ -1,0 +1,65 @@
+@import "com1";
+body,html{
+  background:#0c6078;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  &:after{
+    content: "";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+  }
+}
+.header{
+  width: 100%;
+  height:48px;
+  border-bottom:1px solid #012630;
+  box-sizing: border-box;
+  h3{
+    font-size:28px;
+    color:#fffefe;
+    letter-spacing:3px;
+    text-align: center;
+    line-height: 48px;
+    height:48px;
+  }
+}
+.content {
+  height:500px;
+  width: 100%;
+  flex:1;
+  .box1{
+    float:left;
+    width:50%;
+    height:500px;
+    box-sizing: border-box;
+    padding:1%;
+    p{
+      font-size: 12px;
+      color:#fff;
+      line-height: 28px;
+      border-bottom: 2px solid #027c9f;
+    }
+    .bo11{
+      height:32px;
+      width: 100%;
+
+      //background:green;
+      div{
+        float:left;
+        width:19%;
+        line-height:32px;
+      }
+    }
+  }
+  $colors:red blue orange yellow pink gray;
+
+  @for $i from 1 through length($colors){
+    .box1:nth-child(#{$i}){
+      background-color:nth($colors,$i);
+    }
+  }
+}

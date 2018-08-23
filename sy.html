@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/sy.css">
+    <script src="js/jquery.1.8.3.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h3>生源分析</h3>
+    </div>
+    <div class="content">
+        <div class="box1">
+            <p>入学统计</p>
+            <div class="bo11">
+                <div> 类型：<select name="" id="">
+                    <option value="">生源地</option></select>
+                </div>
+                <div> 类型：<select name="" id="">
+                    <option value="">生源地</option></select>
+                </div>
+            </div>
+            <div id="cont1" class="box22"></div>
+        </div>
+        <div class="box1">
+            <p>入学统计</p>
+            <div id="cont2" class="box22"></div>
+        </div>
+        <div class="box1">
+            <p>入学统计</p>
+            <div id="cont3" class="box22"></div>
+        </div>
+        <div class="box1">
+            <p>入学统计</p>
+            <div id="cont4" class="box22"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $('#cont1').highcharts({
+        chart: {
+            type: 'column' ,
+            spacingTop:15,
+            // // 指定外边距
+            margin:[60,20,30,50],
+            plotBackgroundColor:'rgba(0,0,0,0.2)',
+        },
+        title: {
+            show:false,
+            // text: '大学专业课成绩统计分析',
+            // align: 'left'
+        },
+        credits: {
+            enabled: false
+        },
+        legend: {
+            enabled: false
+        },
+        yAxis: {
+            lineWidth: 1,
+            lineColor: '#728486',
+            title: {
+                text: '',
+            }
+        },
+        xAxis: {
+            categories: ['古代历史','考古学','现代史','世界史','发展史','古迹研究','科学规划'],
+            lineWidth: 1,
+            lineColor: '#728486',
+            tickLength: 0,
+            labels:{
+                padding: 1
+            },
+
+        },
+
+        plotOptions: {
+            series: {
+                allowPointSelect: true,
+            }
+        },
+        series: [{
+            data: [
+                {color:'#3f99e5',y:29.9},
+                {color:'#9b3eca',y:71.5},
+                {color:'#ea69a2',y:106.4},
+                {color:'#32b16c',y:129.9},
+                {color:'#f39b77',y:144.0},
+                {color:'#eb6100',y:176.0},
+                {color:'#98e024',y:89.5}
+            ],
+            // color:[,,,,,']
+            // 71.5, 106.4, 129.2, 144.0, 176.0,89.5
+        }],
+
+
+    });
+    // the button action
+    $('#button').click(function () {
+        var selectedPoints = chart.getSelectedPoints();
+        if (chart.lbl) {
+            chart.lbl.destroy();
+        }
+        chart.lbl = chart.renderer.label('You selected ' + selectedPoints.length + ' points', 100, 60)
+            .attr({
+                padding: 10,
+                r: 5,
+                fill: Highcharts.getOptions().colors[1],
+                zIndex: 5
+            })
+            .css({
+                color: 'white'
+            })
+            .add();
+
+    });
+
+</script>
